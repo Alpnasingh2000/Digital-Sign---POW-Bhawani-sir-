@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Signature - Bhawani Singh</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .signature-card {
+            background: #ffffff;
+            background: linear-gradient(135deg, #ffffff 0%, #f9fbf7 100%);
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            max-width: 850px;
+            width: 100%;
+            border-left: 10px solid #c5a059;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .signature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 180px 1fr 160px; 
+            gap: 30px;
+            align-items: center;
+        }
+
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #c5a059;
+            padding: 4px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-section {
+            border-right: 1px solid #eee;
+            padding-right: 20px;
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1a237e;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .designation {
+            font-size: 16px;
+            color: #c5a059;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #616161;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .address {
+            font-size: 12px;
+            color: #757575;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+
+        /* --- Social Media Section (Now under Address) --- */
+        .social-links {
+            margin-top: 12px; /* Space between address and icons */
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            font-size: 20px;
+            color: #c5a059;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s;
+        }
+
+        .social-icon:hover {
+            color: #1a237e;
+            transform: scale(1.2);
+        }
+
+        .logos-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .palace-logo {
+            width: 120px;
+            height: auto;
+            mix-blend-mode: multiply; 
+            filter: contrast(1.1);
+        }
+
+        .rtdc-logo {
+            width: 60px;
+            height: auto;
+        }
+
+        .rtdc-text {
+            font-size: 10px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .card-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 40px 20px;
+            }
+            .info-section {
+                border-right: none;
+                padding-right: 0;
+            }
+            .contact-item, .social-links { justify-content: center; }
+            .profile-photo { width: 140px; height: 140px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signature-card">
+        <div class="card-content">
+            <div class="profile-section">
+                <img src="https://www.lohagarhfortresort.in/brochures/image.png" alt="Bhawani Singh" class="profile-photo">
+            </div>
+
+            <div class="info-section">
+                <div class="name">BHAWANI SINGH RAO</div>
+                <div class="designation">Director of Sales</div>
+                <div class="subtitle">Palace on Wheels</div>
+
+                <div class="contact-info">
+                    <a href="tel:+919251654123" class="contact-item">
+                        <span><i class="fas fa-phone"></i></span> +91 92516 83095
+                    </a>
+                    <a href="mailto:palaceonwheels.gm@rajasthan.gov.in" class="contact-item">
+                        <span><i class="fas fa-envelope"></i></span> palaceonwheels.rtdc@rajasthan.gov.in
+                    </a>
+                    <a href="http://www.palaceonwheels.rajasthan.gov.in" target="_blank" class="contact-item">
+                        <span><i class="fas fa-globe"></i></span> www.palaceonwheels.rajasthan.gov.in
+                    </a>
+                </div>
+
+                <div class="address">
+                    <i class="fas fa-map-marker-alt"></i> C-66, Near Airport Terminal - 2, Siddharth Nagar,<br>
+                    Govind Vihar, Jaipur, Rajasthan - 302018(India)
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/heritagepalaceonwheel/" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/heritagepalaceonwheels/" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@thepowindia" target="_blank" class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="logos-section">
+                <img src="https://www.lohagarhfortresort.in/brochures/logo.jpg.jpeg" alt="Palace on Wheels" class="palace-logo">
+                <div>
+                    <img src="https://www.lohagarhfortresort.in/brochures/rtdc-logo.jpg.jpeg" alt="RTDC" class="rtdc-logo">
+                    
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
